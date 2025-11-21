@@ -15,22 +15,22 @@ resource "azurerm_storage_account" "mystorage" {
   }
 }
 
-resource "azurerm_kubernetes_cluster" "myaks" {
-  name                = "myakscluster"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-  dns_prefix          = "exampleaks1"
+# resource "azurerm_kubernetes_cluster" "myaks" {
+#   name                = "myakscluster"
+#   location            = azurerm_resource_group.rg.location
+#   resource_group_name = azurerm_resource_group.rg.name
+#   dns_prefix          = "exampleaks1"
 
-  default_node_pool {
-    name       = "default"
-    node_count = 1
-    vm_size    = "standard_dc2s_v3"
-  }
-  identity {
-    type = "SystemAssigned"
-  }
+#   default_node_pool {
+#     name       = "default"
+#     node_count = 1
+#     vm_size    = "standard_dc2s_v3"
+#   }
+#   identity {
+#     type = "SystemAssigned"
+#   }
 
-  tags = {
-    Environment = "DEV"
-  }
-}
+#   tags = {
+#     Environment = "DEV"
+#   }
+# }
